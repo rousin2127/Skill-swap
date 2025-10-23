@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. Bring your own guitar or borrow one.",
+    "image": "https://picsum.photos/id/237/800/600",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers — casual and friendly.",
+    "image": "https://picsum.photos/id/1005/800/600",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Intro to Python",
+    "providerName": "Rafi Khan",
+    "providerEmail": "rafi@skillswap.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Hands-on Python lessons with mini projects and code reviews.",
+    "image": "https://picsum.photos/id/1/800/600",
+    "category": "Coding"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Leila Ahmed",
+    "providerEmail": "leila@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Gentle yoga and breathing exercises suitable for all bodies.",
+    "image": "https://picsum.photos/id/1025/800/600",
+    "category": "Wellness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Basic Woodworking",
+    "providerName": "Tom Brooks",
+    "providerEmail": "tom@skillswap.com",
+    "price": 30,
+    "rating": 4.5,
+    "slotsAvailable": 4,
+    "description": "Learn to build small household items and basic tool safety.",
+    "image": "https://picsum.photos/id/1050/800/600",
+    "category": "Crafts"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Spanish Conversation Exchange",
+    "providerName": "Mariana Lopez",
+    "providerEmail": "mariana@skillswap.com",
+    "price": 12,
+    "rating": 4.85,
+    "slotsAvailable": 5,
+    "description": "Practice speaking Spanish with a native speaker; sessions tailored to fluency.",
+    "image": "https://picsum.photos/id/1020/800/600",
+    "category": "Language"
+  }
+]
