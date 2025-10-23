@@ -6,21 +6,26 @@ import { RouterProvider } from "react-router/dom";
 import Root from './assets/layout/Root.jsx';
 import Home from './assets/pages/Home.jsx';
 import Skills from './assets/pages/Skills.jsx';
+import SkillDetails from './assets/pages/SkillDetails.jsx';
 
 
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    Component:Root,
+    path: '/',
+    Component: Root,
     children: [
       {
         index: true,
         Component: Home
       },
       {
-        path:'/skills',
+        path: '/skills',
         Component: Skills
+      },
+      {
+        path: '/skills/:id',
+        element: <SkillDetails></SkillDetails>
       }
     ]
   }

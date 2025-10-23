@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, Links } from 'react-router';
+import { Link, Links, NavLink } from 'react-router';
 
 const Navbar = () => {
 
     const links = <>
-        <li><a>Home</a></li>
-        <li><a>My Profile</a></li>
+        <li><NavLink to={'/'}>Home</NavLink></li>
+        <li><NavLink>My Profile</NavLink></li>
     </>
 
     return (
@@ -21,13 +21,13 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className=" ml-5 text-xl">SkillSwap</Link >
+                <Link to='/' className=" ml-5 md:text-4xl font-extrabold ">SkillSwap</Link >
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                {
-                    links
-                }
+                    {
+                        links
+                    }
                 </ul>
             </div>
             <div className="navbar-end gap-2">
