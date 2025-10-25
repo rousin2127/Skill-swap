@@ -1,17 +1,21 @@
 // import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { use, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 import { updateProfile } from 'firebase/auth';
 import { AuthContext } from '../../context/AuthContext';
-import { p } from 'framer-motion/client';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+// import { p } from 'framer-motion/client';
 // import { auth } from '../firebase/firebase.init';
 
 const Signup = () => {
     const { createUser } = use(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false)
 
 
     const handleSignUp = (event) => {
@@ -57,6 +61,8 @@ const Signup = () => {
                     .catch(error => {
 
                     })
+                event.target.reset()
+                navigate('/')    
                 setSuccess(true)
 
             })
@@ -87,6 +93,11 @@ const Signup = () => {
     // }
 
 
+    const handleShowPassword = (event) => {
+        event.preventDefault()
+        setShowPassword(!showPassword)
+    }
+
     return (
 
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl m-auto my-[10vh]">
@@ -105,7 +116,16 @@ const Signup = () => {
                         <input type="email" name='email' className="input" placeholder="Email" />
                         {/* password */}
                         <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" />
+                        <div className='relative'>
+                            <input type={showPassword ? 'text' : 'password'} className="input" placeholder="Password" name='password' />
+                            <button
+                                onClick={handleShowPassword}
+                                className="btn btn-xs absolute top-2 right-5">
+                                {
+                                    showPassword ? <FaEyeSlash /> : <FaEye />
+                                }
+                            </button>
+                        </div>
                         {/* <div><a className="link link-hover">Forgot password?</a></div> */}
                         <button className="btn btn-neutral mt-4">SignUp</button>
                     </fieldset>
