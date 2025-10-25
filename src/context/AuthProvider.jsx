@@ -3,29 +3,29 @@ import { AuthContext } from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase.init';
 
-const googleProvider= new GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider()
 
-const AuthProvider = ({children}) => {
-    const [user, setUser]=useState(null);
-    const [loading , setLoading]= useState(true)
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
 
-    const createUser = (email,password) =>{
+    const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signInUser =(email, password)=>{
-         setLoading(true)
+    const signInUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const signInWithGoogle =()=>{
+    const signInWithGoogle = () => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
-    const signOutUser =()=>{
-         setLoading(true)
+    const signOutUser = () => {
+        setLoading(true)
         return signOut(auth);
     }
     // onAuthStateChanged(auth, (currentUser)=>{
@@ -38,24 +38,33 @@ const AuthProvider = ({children}) => {
 
 
 
-    useEffect(()=>{
-        const unsubscribe= onAuthStateChanged(auth,(currentUser)=>{
-            console.log('curentuser isn auth state change', currentUser)
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            // console.log('curentuser isn auth state change', currentUser)
             setUser(currentUser);
             setLoading(false)
         })
-        return () =>{
+        return () => {
             unsubscribe()
         }
-    },[])
+    }, [])
 
-    const authInfo={
+    const authInfo = {
         user,
         loading,
         createUser,
         signInUser,
         signInWithGoogle,
         signOutUser,
+    }
+
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center h-screen bg-white">
+                <span className="loading loading-spinner loading-lg text-blue-600"></span>
+            </div>
+        );
     }
 
 

@@ -12,12 +12,34 @@ const Navbar = () => {
             .then(() => {
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
-    const links = <>
-        <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/profile'}>My Profile</NavLink></li>
+    const links =  <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-600 font-semibold underline"
+              : "text-gray-700 hover:text-blue-500 transition"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-600 font-semibold underline"
+              : "text-gray-700 hover:text-blue-500 transition"
+          }
+        >
+          My Profile
+        </NavLink>
+      </li>
     </>
 
     return (

@@ -19,7 +19,7 @@ const Profile = () => {
         setMessage('✅ Profile updated successfully!');
       })
       .catch((error) => {
-        console.error(error);
+        // console.error(error);
         setMessage('❌ Failed to update profile.');
       });
   };

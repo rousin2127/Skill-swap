@@ -25,7 +25,7 @@ const Signup = () => {
         const name = event.target.name.value
         const photo = event.target.photo.value
 
-        console.log(email, password, name, photo)
+        // console.log(email, password, name, photo)
 
 
         const passwordPattern = /^.{6,}$/;
@@ -48,7 +48,7 @@ const Signup = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 // event.target.reset()
                 const profile = {
                     displayName: name,
@@ -67,7 +67,7 @@ const Signup = () => {
 
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
                 setError(error.message)
 
             })

@@ -44,11 +44,11 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 navigate('/')
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
 
@@ -60,7 +60,7 @@ const Login = () => {
 
     const handleForgetPassword = () => {
         const email = emailRef.current.value;
-        console.log('forget password', email)
+        // console.log('forget password', email)
         navigate('/forget-password', { state: { email } })
 
     }
