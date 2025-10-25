@@ -17,7 +17,7 @@ const Home = () => {
       skill: "Web Development",
       rating: 4.9,
       image:
-        "https://i.ibb.co/YkqZtLw/person1.jpg",
+        "https://img.freepik.com/free-photo/portrait-smiling-handsome-man-eyeglasses_171337-4853.jpg?semt=ais_hybrid&w=740&q=80",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Home = () => {
       skill: "Graphic Design",
       rating: 4.8,
       image:
-        "https://i.ibb.co/nMnF6vS/person2.jpg",
+        "https://img.freepik.com/free-photo/portrait-smiling-handsome-man-eyeglasses_171337-4853.jpg?semt=ais_hybrid&w=740&q=80",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Home = () => {
       skill: "Digital Marketing",
       rating: 4.7,
       image:
-        "https://i.ibb.co/dkJtCs2/person3.jpg",
+        "https://img.freepik.com/free-photo/portrait-smiling-handsome-man-eyeglasses_171337-4853.jpg?semt=ais_hybrid&w=740&q=80",
     },
   ];
 
@@ -101,7 +101,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ✅ Extra Custom Section - “Why Choose SkillSwap?” */}
+      {/* extra section ?” */}
       <section className="mt-20 py-10">
         <h3 className="font-bold md:text-3xl mb-8 text-center flex items-center justify-center gap-2">
           <RiLightbulbFlashFill className="text-yellow-500"></RiLightbulbFlashFill> Why Choose SkillSwap?

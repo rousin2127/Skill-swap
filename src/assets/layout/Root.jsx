@@ -9,8 +9,8 @@ const Root = () => {
         <>
         <div>
             <Navbar></Navbar>
-            <div className='max-h-fit'>
-                <Outlet></Outlet>
+            <div className='min-h-screen'>
+                <Outlet ></Outlet>
             </div>
             <Footer></Footer>
             

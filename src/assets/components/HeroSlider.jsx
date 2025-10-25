@@ -38,7 +38,7 @@ const HeroSlider = () => {
                         delay: 4000,
                         disableOnInteraction: false,
                     }}
-                    className="md:h-[40vh] w-full mt-15 rounded-2xl"
+                    className="md:h-[40vh] w-full mt-10 rounded-2xl"
                 >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>

@@ -13,6 +13,7 @@ import Login from './assets/components/Login.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
 import PrivateRout from './assets/components/PrivateRout.jsx';
 import ForgotPass from './assets/pages/Forgetpass.jsx';
+import 'animate.css';
 
 
 

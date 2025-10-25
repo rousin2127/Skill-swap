@@ -21,7 +21,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +33,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className=" ml-5 md:text-4xl font-extrabold ">SkillSwap</Link >
+                <Link to='/' className=" ml-5 md:text-4xl font-extrabold animate__animated animate__bounce animate__delay-2s">SkillSwap</Link >
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
