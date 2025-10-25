@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
 const Skills = () => {
@@ -28,7 +29,7 @@ const Skills = () => {
                     />
                     <div className="p-5 text-center">
                         <h3 className="text-xl font-semibold mb-2">{skill.skillName}</h3>
-                        <p className="text-gray-600 mb-2">⭐ {skill.rating} / 5</p>
+                        <p className="text-gray-600 mb-2 flex justify-center items-center gap-2"><FaStar className="text-yellow-500"></FaStar> {skill.rating} / 5</p>
                         <p className="text-blue-600 font-semibold mb-4">
                             ${skill.price} per session
                         </p>
