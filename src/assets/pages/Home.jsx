@@ -4,7 +4,7 @@ import Skills from './Skills';
 
 const Home = () => {
     return (
-        <div className=' h-full w-11/12 m-auto'>
+        <div className=' w-11/12 m-auto'>
             <HeroSlider ></HeroSlider>
             <div>
                 <h3 className='font-bold md:text-3xl mt-5'>Popular Skills</h3>

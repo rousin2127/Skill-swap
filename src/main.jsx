@@ -34,15 +34,15 @@ const router = createBrowserRouter([
         element: <PrivateRout><SkillDetails></SkillDetails></PrivateRout>
       },
       {
-        path: 'profile',
+        path: '/profile',
         element: <PrivateRout><Profile></Profile></PrivateRout>
       },
       {
-        path: 'signup',
+        path: '/signup',
         Component: Signup
       },
       {
-        path: 'login',
+        path: '/login',
         Component: Login
       }
     ]
