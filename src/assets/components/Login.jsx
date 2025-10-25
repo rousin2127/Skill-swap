@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -6,19 +6,27 @@ import toast from 'react-hot-toast';
 
 
 const Login = () => {
-    const { signInUser,signInWithGoogle } = use(AuthContext)
+    const { signInUser, signInWithGoogle } = use(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
-    console.log(location)
+    // console.log(location)
     const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState('');
+
+    const emailRef = useRef(); 
+
+
+
+
+
+
 
     const handleLogIn = (event) => {
         event.preventDefault()
         const email = event.target.email.value
         const password = event.target.password.value
 
-        console.log(email, password)
+        // console.log(email, password)
 
 
         signInUser(email, password)
@@ -29,24 +37,32 @@ const Login = () => {
             })
             .catch(error => {
                 // console.log(error);
-                setError(error)
+                toast.error('Please enter a valid email or Password')
             })
     }
 
-    const handleGoogleSignIn= ()=>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then( result =>{
-            console.log(result.user)
-            navigate('/')
-        })
-        .catch(error =>{
-            console.log (error)
-        })
+            .then(result => {
+                console.log(result.user)
+                navigate('/')
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     const handleShowPassword = (event) => {
         event.preventDefault()
         setShowPassword(!showPassword)
+    }
+
+
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value;
+        console.log('forget password', email)
+        navigate('/forget-password', { state: { email } })
+
     }
 
 
@@ -57,7 +73,11 @@ const Login = () => {
                 <form onSubmit={handleLogIn}>
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" />
+                        <input type="email"
+                            name='email'
+                            className="input"
+                            ref={emailRef}
+                            placeholder="Email" />
                         <label className="label">Password</label>
                         <div className='relative'>
                             <input type={showPassword ? 'text' : 'password'} className="input" placeholder="Password" name='password' />
@@ -69,14 +89,16 @@ const Login = () => {
                                 }
                             </button>
                         </div>
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <div><button 
+                        type='button'
+                        onClick={handleForgetPassword} className="link link-hover">Forgot password?</button></div>
                         <button className="btn btn-neutral mt-4">Login</button>
 
                     </fieldset>
                     {
                         error && alert('please valid email or pass')
                     }
-                    
+
                 </form>
                 {/* sign in with google */}
                 <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">

@@ -9,7 +9,7 @@ const Root = () => {
         <>
         <div>
             <Navbar></Navbar>
-            <div className=''>
+            <div className='max-h-fit'>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

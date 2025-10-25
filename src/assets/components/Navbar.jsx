@@ -47,7 +47,7 @@ const Navbar = () => {
                 {
                     user ? (
                         <>
-                            {/* Profile Picture with Tooltip */}
+                            {/* profile tooltip */}
                             <div className="tooltip tooltip-bottom" data-tip={user.displayName || 'No Name'}>
                                 <Link to="/profile">
                                     {user.photoURL ? (

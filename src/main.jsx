@@ -12,6 +12,7 @@ import Signup from './assets/components/Signup.jsx';
 import Login from './assets/components/Login.jsx';
 import AuthProvider from './context/AuthProvider.jsx';
 import PrivateRout from './assets/components/PrivateRout.jsx';
+import ForgotPass from './assets/pages/Forgetpass.jsx';
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         Component: Login
+      },
+      {
+        path: '/forget-password',
+        element: <ForgotPass></ForgotPass>
       }
     ]
   }
