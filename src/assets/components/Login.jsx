@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../context/AuthContext';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import { PiSelectionSlashBold } from 'react-icons/pi';
 
 
 const Login = () => {
-    const { signInUser, signInWithGoogle } = use(AuthContext)
+    const { signInUser, signInWithGoogle, setLoading } = use(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     // console.log(location)
@@ -38,6 +39,8 @@ const Login = () => {
             .catch(error => {
                 // console.log(error);
                 toast.error('Please enter a valid email or Password')
+            }).finally(()=>{
+                setLoading(false)
             })
     }
 
