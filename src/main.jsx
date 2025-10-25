@@ -7,6 +7,11 @@ import Root from './assets/layout/Root.jsx';
 import Home from './assets/pages/Home.jsx';
 import Skills from './assets/pages/Skills.jsx';
 import SkillDetails from './assets/pages/SkillDetails.jsx';
+import Profile from './assets/pages/Profile.jsx';
+import Signup from './assets/components/Signup.jsx';
+import Login from './assets/components/Login.jsx';
+import AuthProvider from './context/AuthProvider.jsx';
+import PrivateRout from './assets/components/PrivateRout.jsx';
 
 
 
@@ -25,7 +30,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/skills/:id',
-        element: <SkillDetails></SkillDetails>
+        element: <PrivateRout><SkillDetails></SkillDetails></PrivateRout>
+      },
+      {
+        path: 'profile',
+        element: <PrivateRout><Profile></Profile></PrivateRout>
+      },
+      {
+        path: 'signup',
+        Component: Signup
+      },
+      {
+        path: 'login',
+        Component: Login
       }
     ]
   }
@@ -33,6 +50,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+          <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )

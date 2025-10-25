@@ -1,11 +1,23 @@
-import React from 'react';
-import { Link, Links, NavLink } from 'react-router';
+import React, { use } from 'react';
+import { Link, NavLink } from 'react-router';
+
+import { CgProfile } from 'react-icons/cg';
+import { AuthContext } from '../../context/AuthContext';
 
 const Navbar = () => {
+    const { user, signOutUser } = use(AuthContext);
 
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink>My Profile</NavLink></li>
+        <li><NavLink to={'/profile'}>My Profile</NavLink></li>
     </>
 
     return (
@@ -31,10 +43,36 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-                <Link className="btn">Sign Up</Link>
-                <Link className="btn">Login</Link>
+
+                {
+                    user ? (
+                        <>
+                            {/* Profile Picture with Tooltip */}
+                            <div className="tooltip tooltip-bottom" data-tip={user.displayName || 'No Name'}>
+                                <Link to="/profile">
+                                    {user.photoURL ? (
+                                        <img
+                                            src={user.photoURL}
+                                            alt="User"
+                                            className="w-10 h-10 rounded-full border-2 border-gray-400 hover:scale-105 transition"
+                                        />
+                                    ) : (
+                                        <CgProfile className="w-8 h-8" />
+                                    )}
+                                </Link>
+                            </div>
+
+                            <button onClick={handleSignOut} className="btn">
+                                Sign Out
+                            </button>
+                        </>
+                    )
+                        : <><Link to={'/login'} className="btn">Login</Link>
+                            <Link to={'/signup'} className="btn">Sign Up</Link> </>
+                }
             </div>
         </div>
+
     );
 };
 
