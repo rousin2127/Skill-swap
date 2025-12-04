@@ -28,7 +28,9 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
+      
+      {user && (
+        <li>
         <NavLink
           to="/profile"
           className={({ isActive }) =>
@@ -40,10 +42,50 @@ const Navbar = () => {
           My Profile
         </NavLink>
       </li>
+      ) 
+      }
+      
+      <li>
+        <NavLink
+          to="/skills"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-600 font-semibold underline"
+              : "text-gray-700 hover:text-blue-500 transition"
+          }
+        >
+          All Skills
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/about-us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-600 font-semibold underline"
+              : "text-gray-700 hover:text-blue-500 transition"
+          }
+        >
+          About us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-600 font-semibold underline"
+              : "text-gray-700 hover:text-blue-500 transition"
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
     </>
 
     return (
-        <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto navbar bg-base-100 shadow-sm sticky top-0 z-50">
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -84,13 +126,13 @@ const Navbar = () => {
                                 </Link>
                             </div>
 
-                            <button onClick={handleSignOut} className="btn">
+                            <button onClick={handleSignOut} className="btn bg-blue-600">
                                 Sign Out
                             </button>
                         </>
                     )
-                        : <><Link to={'/login'} className="btn">Login</Link>
-                            <Link to={'/signup'} className="btn">Sign Up</Link> </>
+                        : <><Link to={'/login'} className="btn bg-blue-600 text-white">Login</Link>
+                            <Link to={'/signup'} className="btn bg-blue-600 text-white">Sign Up</Link> </>
                 }
             </div>
         </div>

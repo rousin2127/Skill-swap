@@ -40,7 +40,7 @@ const Login = () => {
                 // console.log(error);
                 toast.error('Please enter a valid email or Password')
             }).finally(()=>{
-                setLoading(false)
+               setLoading(false)
             })
     }
 

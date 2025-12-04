@@ -8,6 +8,7 @@ import { RiLightbulbFlashFill } from "react-icons/ri";
 import { IoSettings } from "react-icons/io5";
 import { SiSearxng } from "react-icons/si";
 import { BsCalendar3, BsRocketTakeoff } from "react-icons/bs";
+import PopularSkills from "./PopularSkills";
 
 const Home = () => {
   const topProviders = [
@@ -41,8 +42,7 @@ const Home = () => {
     <div className="w-11/12 m-auto">
       <HeroSlider></HeroSlider>
       <section className="mt-10">
-        <h3 className="font-bold md:text-3xl mb-5">Popular Skills</h3>
-        <Skills></Skills>
+        <PopularSkills></PopularSkills>
       </section>
 
       {/* top provider section  */}

@@ -14,6 +14,8 @@ import AuthProvider from './context/AuthProvider.jsx';
 import PrivateRout from './assets/components/PrivateRout.jsx';
 import ForgotPass from './assets/pages/Forgetpass.jsx';
 import 'animate.css';
+import AboutUs from './assets/pages/AboutUs.jsx';
+import Contact from './assets/pages/Contact.jsx';
 
 
 
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/skills/:id',
-        element: <PrivateRout><SkillDetails></SkillDetails></PrivateRout>
+        element: <SkillDetails></SkillDetails>
       },
       {
         path: '/profile',
@@ -48,9 +50,17 @@ const router = createBrowserRouter([
         Component: Login
       },
       {
+        path:'/about-us',
+        Component: AboutUs
+      },
+      {
+        path:'/contact',
+        Component: Contact
+      },
+      {
         path: '/forget-password',
         element: <ForgotPass></ForgotPass>
-      }
+      },
     ]
   }
 ])
