@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const PopularSkills = () => {
     const [skills, setSkills] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("/skills.json")
@@ -43,7 +45,7 @@ const PopularSkills = () => {
                             </p>
                             <button
                                 onClick={() => navigate(`/skills/${skill.skillId}`)}
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition cursor-pointer"
                             >
                                 View Details
                             </button>

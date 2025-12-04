@@ -16,6 +16,7 @@ import ForgotPass from './assets/pages/Forgetpass.jsx';
 import 'animate.css';
 import AboutUs from './assets/pages/AboutUs.jsx';
 import Contact from './assets/pages/Contact.jsx';
+import Error from './assets/pages/Error.jsx';
 
 
 
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         path: '/forget-password',
         element: <ForgotPass></ForgotPass>
       },
+      {
+        path:'*',
+        Component:Error
+      }
     ]
   }
 ])

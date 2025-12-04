@@ -105,7 +105,7 @@ const Skills = () => {
                             </p>
                             <button
                                 onClick={() => navigate(`/skills/${skill.skillId}`)}
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition cursor-pointer"
                             >
                                 View Details
                             </button>
